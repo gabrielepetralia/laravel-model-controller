@@ -17,4 +17,10 @@ class Controller extends BaseController
       $movies = Movie::orderBy("title")->get();
       return view("home", compact("movies"));
     }
+
+  public function movie_details($slug)
+  {
+    $movie = Movie::where("slug", $slug)->first();
+    return view("movie_details", compact("movie"));
+  }
 }
