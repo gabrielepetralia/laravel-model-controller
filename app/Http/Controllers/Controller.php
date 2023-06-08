@@ -21,6 +21,9 @@ class Controller extends BaseController
   public function movie_details($slug)
   {
     $movie = Movie::where("slug", $slug)->first();
+    if(empty($movie)) {
+      abort(404);
+    }
     return view("movie_details", compact("movie"));
   }
 }

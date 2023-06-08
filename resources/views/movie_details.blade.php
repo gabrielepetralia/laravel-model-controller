@@ -1,7 +1,7 @@
 @extends("layout.main")
 
 @section("title")
-    Comics | {{ $movie["title"] }}
+    {{ $movie["title"] }}
 @endsection
 
 @section("content")
